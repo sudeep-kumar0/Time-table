@@ -260,31 +260,4 @@ Open your browser at `http://localhost:5173`.
 
 ---
 
-## 10. Interview Demonstration Guide
 
-1. **Sign In**:
-   - Navigate to `/login`. Click **"Admin Demo"** to auto-fill `admin@smartschedule.edu` / `Admin@123`.
-2. **Explore Dashboard**:
-   - Inspect the 8 KPI cards, facility utilization previews, and CSP pipeline summary.
-3. **Generate Valid Timetable**:
-   - Navigate to **"Generate Timetable"**.
-   - Select Division **`ISE-A`**, configure soft constraint preferences, and click **"Generate Timetable"**.
-   - Observe solver completion duration (~10–30ms), zero hard violations, and grounded verification proofs.
-4. **View Multi-Perspective Timetable Grid**:
-   - Open **"Timetables"**.
-   - Switch between **Division View**, **Faculty View** (filter by teacher), and **Classroom View** (filter by lab/lecture hall).
-   - Test **CSV Export** and **Print Timetable**.
-5. **Demonstrate Impossible Conflict Diagnosis (Requirement 13 & 25)**:
-   - Navigate back to **"Generate Timetable"**.
-   - Select Division **`ISE-OVERSIZE`** (95 students).
-   - Click **"Generate Timetable"**.
-   - The engine halts and outputs the structured diagnostic report:
-     * *Problem*: No qualifying laboratory exists for Division ISE-OVERSIZE.
-     * *Reason*: Cohort has 95 students, but maximum laboratory capacity is 65.
-     * *Action*: Recommends splitting division or commissioning larger facilities.
-6. **Validate & Optimize**:
-   - In **"Timetables"**, click **"Validate Constraints"** to verify 0 violations.
-   - Click **"Optimize Soft Score"** to run local search neighborhood swaps and observe real penalty score reduction (e.g. 48 $\to$ 24).
-7. **View Analytical Reports & History**:
-   - Visit **"Reports"** for teacher workload percentages and room utilization rates.
-   - Visit **"Generation History"** to review the complete audit trail.
